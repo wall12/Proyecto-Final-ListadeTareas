@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+:root {
+    --color-Fondo: #e7e7e7;
+    /*#121212*/
+    --color-Header: #fff;
+    /*#333*/
+    --color-Letras: #333;
+    /*#fff*/
+    --color-Sombras: #000000;
+    --transition: color 0.3s, backgroundColor 0.3s ease-in-out;
+}
+
+input[type=datetime-local]::-webkit-calendar-picker-indicator {
+    font-size: 1.5rem;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 100%;
+    background-color: var(--color-Fondo);
+    transition: var(--transition);
+}
+
+input:focus {
+    outline: auto;
+}
+
+header {
+    display: grid;
+    /* margin-right: 3%; */
+    /* margin-top: 8rem; */
+    /* margin-left: 3%; */
+    gap: 3rem;
+    grid-template-areas: "titulo titulo titulo titulo btnAgregar buscar btnTema";
+    /* vertical-align: middle; */
+
+
+
+    /* display: flex; */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 70px;
+    background-color: var(--color-Header);
+    color: var(--color-Letras);
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 10px;
+    box-shadow: 0px 0px 6px 0px var(--color-Sombras);
+    transition: var(--transition);
+}
+
+button:active {
+    transform: scale(0.8);
+    transition: all 100ms ease;
+}
+
+button:hover {
+    background-color: midnightblue;
+    color: #fff;
+    transition: all 100ms ease;
+    box-shadow: 0px 0px 6px 0px var(--color-Sombras);
+}
+
+header h1 {
+    grid-area: titulo;
+    margin-left: 5%;
+}
+
+header input {
+    grid-area: buscar;
+    margin: auto;
+    /* margin-right: 25%;
+    transform: translateX(50%);
+    border: none; */
+    height: 3em;
+    width: 20rem;
+    outline: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: var(--color-Fondo);
+    color: var(--color-Letras);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.contenedor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+    padding: 25px;
+    background-color: var(--color-Header);
+    max-width: 450px;
+    max-height: 350px;
+    box-shadow: 0px 0px 0.5rem var(--color-Sombras);
+    transition: var(--transition);
+    animation: entradaSuave 0.3s ease;
+}
+
+form {
+    margin: 20px 0;
+}
+
+button {
+    color: var(--color-Letras);
+    background-color: var(--color-Fondo);
+}
+
+input {
+    display: block;
+    margin: 5% auto;
+    border: none;
+    height: 3em;
+    width: 85%;
+    outline: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: var(--color-Fondo);
+    color: var(--color-Letras);
+    transition: var(--transition);
+}
+
+#descripTarea {
+    height: 10em;
+}
+
+#elements {
+    display: grid;
+    margin-right: 3%;
+    margin-top: 8rem;
+    margin-left: 3%;
+    gap: 1rem;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    transition: all 1s;
+    animation: entradaSuave 0.25s ease-in-out normal backwards;
+}
+
+#elements div {
+    overflow: hidden;
+    padding: 1rem;
+    background-color: var(--color-Header);
+    border-radius: 0.3rem;
+    color: var(--color-Letras);
+    cursor: pointer;
+    transition: var(--transition);
+    transition: all 400ms;
+    animation: entradaSuave 0.25s ease-in-out normal backwards;
+}
+
+#elements div:hover {
+    background: var(--color-Header);
+    box-shadow: 0px 0px 0.8rem 0px var(--color-Sombras);
+    outline: auto;
+    transition: all 400ms ease;
+}
+
+#elements div:active {
+    background: var(--color-Header);
+    box-shadow: 0px 0px 0.8rem 0px rgba(255, 0, 0, 1);
+    outline: auto;
+    transition: all 400ms ease;
+}
+
+#btnAgregar {
+    display: block;
+    margin: auto;
+    border: none;
+    height: 3em;
+    width: 10rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#agregarTarea {
+    /* position: fixed; */
+    right: 0;
+    /* margin-right: 50%; */
+    /* transform: translateX(50%); */
+    margin: auto;
+    border: none;
+    height: 3em;
+    width: 8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    /* outline: auto; */
+    grid-area: btnAgregar;
+}
+
+#btnTema {
+    /* position: fixed; */
+    right: 0;
+    /* margin-top: 50%; */
+    /* margin-right: 20%; */
+    margin: auto;
+    border: none;
+    height: 3em;
+    width: 8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    grid-area: btnTema;
+}
+
+.datosMostrados h3 {
+    margin: auto;
+    margin-top: -3%;
+    border-bottom: 0.1rem solid;
+}
+
+.datosMostrados p {
+    margin: auto;
+    margin-top: 0.5rem;
+}
+
+.btnCerrar {
+    position: absolute;
+    right: 0;
+    margin-right: 2.5%;
+    margin-top: -7.5%;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        min-width: 400px;
+        height: 10rem;
+        transition: all 500ms ease-in-out;
+        gap: 2rem;
+        grid-template-rows: 10% 5% 10%; 
+        grid-template-areas: 
+        "titulo titulo"
+        "btnAgregar btnTema"
+        "buscar buscar";
+    }
+
+    header h1 {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        min-width: 80%;
+        text-align: center;
+        margin-top: 0;
+        transition: all 500ms ease;
+    }
+
+    header input{
+        margin: auto;
+        margin-top: 6%;
+    }
+
+    .btnCerrar{
+        margin-top: -10%;
+    }
+
+    #agregarTarea {
+        margin-top: 5%;
+        margin-left: 30%;
+    }
+
+    #btnTema{
+        margin-top: 5%;
+        margin-right: 30%;
+    }
+    .contenedor {
+        max-width: 20rem;
+        overflow: hidden;
+    }
+
+    #elements {
+        margin-top: 12.5rem;
+        transition: all 500ms ease-in-out;
+    }
+}
+
+@media screen and (max-width: 1063px) and (min-width: 600px){
+    #elements {
+        margin-top: 11rem;
+    }
+    
+}
+
+
+@keyframes entradaSuave {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

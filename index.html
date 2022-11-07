@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de tareas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Sweet Alert script -->
+</head>
+
+<body>
+    <header>
+        <h1>Organizador de Tareas</h1>
+        <input type="search" id="inputBuscar" placeholder="Buscar Tarea">
+        <button type="button" id="agregarTarea"> Agregar Tarea </button>
+        <button type="button" id="btnTema"> Cambiar Tema </button>
+    </header>
+    <div id="contenedorFormulario" class="contenedor">
+        <form id="formAgregar">
+            <button type="button" id="btnCerrar" class="btnCerrar">X</button>
+            <input type="text" id="nombreTarea" required placeholder="Ingrese Nombre Tarea" autocomplete="off">
+            <input type="textArea" id="descripTarea" required placeholder="Ingrese Descripcion o detalles de la Tarea"
+                autocomplete="off">
+            <input type="datetime-local" id="inputFecha" required placeholder="Seleccione Fecha" autocomplete="off">
+            <button type="submit" id="btnAgregar">Agregar</button>
+        </form>
+    </div>
+    <div>
+        <div id="elements"> </div>
+    </div>
+</body>
+
+</html>
